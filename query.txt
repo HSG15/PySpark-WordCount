@@ -1,0 +1,10 @@
+I'm new with Spark and I learned that there are transformations and actions. 
+Transformations return new rdds and dataframes, and actions make operations on them. 
+Unless an action is not called, no transformations are performed. 
+Transformations are just steps in the lineage unless any action is requested. 
+So, when I read a dataframe it is also a transformation and if I call two actions
+on the same dataframe after reading it, is it read twice or read only once and then actions performed on them?
+
+df = ss.read.csv('test.csv')
+df.count()
+df.take(5)
